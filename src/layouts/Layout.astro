@@ -1,0 +1,77 @@
+---
+import '../styles/globals.css';
+
+export interface Props {
+  title: string;
+  description?: string;
+  lang?: string;
+}
+
+const { title, description = "PollyTalkie - Your AI conversation companion for language learning", lang = "en" } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang={lang} class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+    
+    <!-- SEO Meta Tags -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:image" content="/og-image.png" />
+    
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="/og-image.png" />
+    
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <!-- Analytics and tracking scripts -->
+    <script async src="https://www.zervice.us/ava/chatbot.js" data-config="eyJpZCI6ImNiXzY2NGFjZTQyMzI3MDQyMDZiMjdlNjBmMWUxNzEyZmQwIiwidG9rZW4iOiJhY19mOGNhOGU0YTFmNzg0YTk2YjJmYjg1NmY0ODA1Y2RmNSIsIm5hbWUiOiJDaGF0Ym90In0=" data-id="8d14bad6-7e2a-4e1e-85b0-af1d711290d5" data-js="https://uma.zervice.us/script.js"></script>
+    <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "4bcf3f093bd540b1abf323957828f8b2"}'></script>
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="0224687c-8896-4c82-8b39-8356fcfc150b"></script>
+    
+    <title>{title}</title>
+  </head>
+  <body class="antialiased min-h-screen flex flex-col font-sans bg-background text-foreground">
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  
+  /* Smooth scrolling for anchor links */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted-foreground));
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--foreground));
+  }
+</style>

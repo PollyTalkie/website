@@ -1,0 +1,264 @@
+{
+  "nav": {
+    "pricing": "价格",
+    "blog": "博客",
+    "download": "下载",
+    "terms": "服务条款",
+    "privacy": "隐私政策",
+    "about": "关于我们",
+    "contact": "联系我们",
+    "downloadApp": "下载应用",
+    "scanToDownload": "扫码下载博语通应用"
+  },
+  "home": {
+    "hero": {
+      "tagline": "使用博语通（PollyTalkie）学习外语，像使用母语一样交谈！重构语言学习新方式：自然对话，真实场景，为你量身定制。"
+    },
+    "buttons": {
+      "startLearning": "开始学习",
+      "tryDemo": "试用演示",
+      "downloadApp": "下载应用"
+    },
+    "testimonials": {
+      "title": "用户评价",
+      "subtitle": "加入全球数千名满意的语言学习者",
+      "items": [
+        {
+          "name": "李明",
+          "location": "北京，中国",
+          "image": "/testimonials/user1.jpg",
+          "text": "博语通（PollyTalkie）完全改变了我学习英语的方式。AI对话非常自然，我在3个月内的进步比传统课堂2年的学习还要多！"
+        },
+        {
+          "name": "张伟",
+          "location": "上海，中国",
+          "image": "/testimonials/user2.jpg",
+          "text": "作为一个有语言学习焦虑的人，博语通（PollyTalkie）对我来说是一个改变游戏规则的工具。我可以练习英语而不用担心被评判，个性化的反馈帮助我纠正了我甚至不知道自己有的发音问题。"
+        },
+        {
+          "name": "王芳",
+          "location": "广州，中国",
+          "image": "/testimonials/user3.jpg",
+          "text": "性价比令人难以置信！我曾经每小时花¥400请家教，但现在我每天都能以更低的价格练习日语。无限版计划中的专业词汇主题非常适合我的商务需求。"
+        },
+        {
+          "name": "刘强",
+          "location": "成都，中国",
+          "image": "/testimonials/user4.jpg",
+          "text": "我尝试过市面上所有的语言学习应用，博语通（PollyTalkie）是迄今为止最有效的。AI能适应我的学习风格，并在恰到好处的水平上挑战我。我的德语在短短几周内就有了显著提高！"
+        },
+        {
+          "name": "陈静",
+          "location": "深圳，中国",
+          "image": "/testimonials/user5.jpg",
+          "text": "全天候支持非常棒！每当我对学习路径或技术问题有疑问时，团队都会迅速回应。无限版计划中的专属顾问帮助我创建了完美的学习计划。"
+        },
+        {
+          "name": "赵阳",
+          "location": "杭州，中国",
+          "image": "/testimonials/user6.jpg",
+          "text": "作为一名语言老师，我对博语通（PollyTalkie）的教学方法印象深刻。它将语法自然地融入对话的方式非常出色。我现在向我所有的学生推荐它！"
+        }
+      ]
+    },
+    "features": {
+      "title": "为什么选择博语通（PollyTalkie）？",
+      "naturalConversations": {
+        "title": "自然对话",
+        "description": "与我们的AI语言伙伴练习真实世界对话"
+      },
+      "multipleLanguages": {
+        "title": "多种语言",
+        "description": "通过母语AI老师学习任何语言"
+      },
+      "personalizedLearning": {
+        "title": "个性化学习",
+        "description": "基于您的进度和兴趣的自适应学习路径"
+      },
+      "rapidProgress": {
+        "title": "快速进步",
+        "description": "通过互动对话和反馈更快地学习"
+      }
+    },
+    "cta": {
+      "title": "准备好开始您的语言之旅了吗？",
+      "description": "加入已经通过聊天达到流利程度的数千名学习者。",
+      "button": "免费开始"
+    }
+  },
+  "pricing": {
+    "title": "选择您的计划",
+    "subtitle": "免费开始，准备好时升级",
+    "mostPopular": "最受欢迎",
+    "freeTrialBadge": "免费试用",
+    "earlyAdopter": "早期用户价格",
+    "tiers": {
+      "regular": {
+        "name": "常规版",
+        "price": "¥300",
+        "earlyPrice": "¥200",
+        "period": "/月",
+        "description": "适合持续学习者",
+        "features": {
+          "feature1": "每月15小时对话时间",
+          "feature2": "AI驱动的发音反馈",
+          "feature3": "进度跟踪和分析",
+          "feature4": "多语言支持",
+          "feature5": "移动端和网页端访问",
+          "feature6": "社区支持"
+        },
+        "cta": "开始免费试用"
+      },
+      "aggressive": {
+        "name": "进阶版",
+        "price": "¥570",
+        "earlyPrice": "¥470",
+        "period": "/月",
+        "description": "适合认真的语言学习者",
+        "features": {
+          "feature1": "每月40小时对话时间",
+          "feature2": "高级AI辅导功能",
+          "feature3": "个性化学习路径",
+          "feature4": "优先客户支持",
+          "feature5": "专业词汇主题",
+          "feature6": "每周进度报告"
+        },
+        "cta": "立即开始"
+      },
+      "unlimited": {
+        "name": "无限版",
+        "price": "¥1000",
+        "earlyPrice": "¥800",
+        "period": "/月",
+        "description": "无限学习潜力",
+        "features": {
+          "feature1": "无限对话时间",
+          "feature2": "专属学习顾问",
+          "feature3": "定制课程设计",
+          "feature4": "24/7优先支持",
+          "feature5": "高级分析仪表板",
+          "feature6": "小组学习课程"
+        },
+        "cta": "选择无限版"
+      },
+      "school": {
+        "name": "学校/企业版",
+        "price": "定制",
+        "description": "为机构量身定制的解决方案",
+        "features": {
+          "feature1": "批量用户管理",
+          "feature2": "定制集成",
+          "feature3": "高级报告",
+          "feature4": "专属客户经理",
+          "feature5": "定制品牌选项",
+          "feature6": "SLA保证"
+        },
+        "cta": "联系销售"
+      }
+    },
+    "faqTitle": "常见问题",
+    "addOn": {
+      "faqQuestion": "我可以为常规版计划添加更多小时吗？",
+      "faqAnswer": "可以！您可以以每个¥130的价格购买额外的8小时对话时间块。",
+      "title": "附加小时",
+      "description": "需要更多对话时间？为您的常规版计划添加额外小时。",
+      "pricePerUnit": "8小时额外时间",
+      "totalTime": "总计：每月{0}小时",
+      "totalMonthlyPrice": "每月总价：",
+      "upgradeHint": "考虑升级到进阶版计划以获得更好的价值！",
+      "purchaseButton": "购买附加包",
+      "orText": "或者",
+      "upgradeButton": "升级到进阶版"
+    },
+    "faq": {
+      "question1": "我可以随时取消吗？",
+      "answer1": "是的，您可以随时取消订阅。您的访问权限将持续到当前计费周期结束。",
+      "question2": "有免费试用吗？",
+      "answer2": "有的！常规版计划提供免费试用，让您可以无风险体验博语通。",
+      "question3": "支持哪些语言？",
+      "answer3": "我们支持20多种语言，包括英语、法语、德语、意大利语、葡萄牙语、日语、韩语等。",
+      "question4": "计费如何工作？",
+      "answer4": "所有计划都按月计费。您可以随时通过账户设置升级、降级或取消。"
+    }
+  },
+  "aboutPage": {
+    "title": "关于博语通",
+    "mission": {
+      "title": "我们的使命",
+      "content": "在博语通，我们相信语言学习应该是自然的、有趣的，并且对每个人都是可及的。我们的使命是通过创新的AI技术打破语言障碍，让对话练习24/7可用。"
+    },
+    "technology": {
+      "title": "我们的技术",
+      "content": "我们利用尖端的人工智能和自然语言处理技术创造逼真的对话伙伴。我们的AI导师适应您的学习风格，提供即时反馈，并帮助您在真实场景中建立信心。"
+    },
+    "team": {
+      "title": "我们的团队",
+      "content": "我们多元化的团队由语言学家、AI研究人员和教育专家组成，共同努力创造最有效的语言学习体验。我们热衷于帮助人们跨越文化连接并实现他们的语言目标。"
+    },
+    "values": {
+      "title": "我们的价值观",
+      "innovation": "创新",
+      "innovationDesc": "我们不断推动语言学习技术可能性的边界。",
+      "inclusivity": "包容性",
+      "inclusivityDesc": "我们相信语言学习应该对所有背景和能力的学习者都是可及的。",
+      "quality": "质量",
+      "qualityDesc": "我们在AI技术和用户体验方面保持最高标准。",
+      "community": "社区",
+      "communityDesc": "我们培养一个支持性的社区，让学习者可以共同成长和成功。"
+    },
+    "joinUs": {
+      "title": "加入我们的旅程",
+      "content": "无论您是刚开始语言学习之旅还是希望完善技能，博语通都会在每一步支持您。加入已经通过聊天达到流利程度的数千名学习者。"
+    }
+  },
+  "contactPage": {
+    "title": "联系我们",
+    "getInTouch": {
+      "title": "联系我们",
+      "content": "对博语通有疑问吗？我们很乐意听到您的声音。给我们发送消息，我们会尽快回复。"
+    },
+    "contactInfo": {
+      "phone": "电话",
+      "email": "邮箱",
+      "address": "地址"
+    },
+    "followUs": "关注我们",
+    "form": {
+      "name": "姓名",
+      "email": "邮箱",
+      "subject": "主题",
+      "message": "消息",
+      "selectSubject": "选择主题",
+      "generalInquiry": "一般咨询",
+      "technicalSupport": "技术支持",
+      "billing": "计费",
+      "feedback": "反馈",
+      "partnership": "合作",
+      "send": "发送消息",
+      "sending": "发送中...",
+      "success": "感谢您的消息！我们会尽快回复您。",
+      "error": "抱歉，发送消息时出现错误。请重试。"
+    }
+  },
+  "blog": {
+    "title": "博客",
+    "subtitle": "关于语言学习、AI等的最新文章",
+    "readTime": "分钟阅读",
+    "viewArticle": "查看文章",
+    "contribute": "想为我们的博客做贡献？",
+    "contactUs": "联系我们"
+  },
+  "footer": {
+    "description": "博语通 - 您的AI语言学习对话伙伴",
+    "quickLinks": "快速链接",
+    "legal": "法律",
+    "connect": "联系",
+    "newsletter": {
+      "title": "保持更新",
+      "description": "获取博语通的最新新闻和更新",
+      "placeholder": "输入您的邮箱",
+      "subscribe": "订阅"
+    },
+    "copyright": "© 2024 博语通。保留所有权利。"
+  }
+}

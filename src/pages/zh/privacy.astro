@@ -1,0 +1,115 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navigation from '../../components/Navigation.astro';
+import Footer from '../../components/Footer.astro';
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<Layout title="隐私政策 - 博语通 (PollyTalkie)" lang={lang}>
+  <Navigation />
+  
+  <main class="flex min-h-screen flex-col items-center py-12 bg-background">
+    <div class="container px-4 md:px-6">
+      <h1 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-8 animate-fade-in">
+        隐私政策
+      </h1>
+      <p class="text-muted-foreground mb-8 animate-slide-up">
+        最后更新：2025年5月15日
+      </p>
+
+      <div class="prose dark:prose-invert max-w-none animate-slide-up">
+        <p>本隐私政策描述了我们在您使用服务时收集、使用和披露您信息的政策和程序，并告诉您关于您的隐私权以及法律如何保护您。</p>
+        <br/>
+        <p>我们使用您的个人数据来提供和改进服务。通过使用服务，您同意根据本隐私政策收集和使用信息。</p>
+        <br/>
+
+        <section class="mb-8">
+          <h2 class="text-2xl font-semibold mb-4">解释和定义</h2>
+          <h3 class="text-xl font-medium mb-2">解释</h3>
+          <p>首字母大写的词语具有在以下条件下定义的含义。以下定义无论以单数还是复数形式出现都具有相同的含义。</p>
+
+          <h3 class="text-xl font-medium mb-2 mt-4">定义</h3>
+          <p>就本隐私政策而言：</p>
+          <ul class="list-disc pl-6 mt-2">
+            <li>
+              <p><strong>账户</strong>是指为您创建的用于访问我们服务或服务部分的唯一账户。</p>
+            </li>
+            <li>
+              <p><strong>关联公司</strong>是指控制、被控制或与一方共同控制的实体，其中"控制"是指拥有50%或更多有权选举董事或其他管理机构的股份、股权或其他证券的所有权。</p>
+            </li>
+            <li>
+              <p><strong>应用程序</strong>是指博语通（PollyTalkie），由公司提供的软件程序。</p>
+            </li>
+            <li>
+              <p><strong>公司</strong>（在本协议中称为"公司"、"我们"、"我们的"或"我们"）是指博语通（PollyTalkie）。</p>
+            </li>
+            <li>
+              <p><strong>Cookies</strong>是网站放置在您的计算机、移动设备或任何其他设备上的小文件，包含您在该网站上的浏览历史记录详细信息等多种用途。</p>
+            </li>
+            <li>
+              <p><strong>国家</strong>是指：加利福尼亚州，美国</p>
+            </li>
+            <li>
+              <p><strong>设备</strong>是指可以访问服务的任何设备，如计算机、手机或数字平板电脑。</p>
+            </li>
+            <li>
+              <p><strong>个人数据</strong>是与已识别或可识别个人相关的任何信息。</p>
+            </li>
+            <li>
+              <p><strong>服务</strong>是指应用程序或网站或两者。</p>
+            </li>
+            <li>
+              <p><strong>使用数据</strong>是指通过使用服务或从服务基础设施本身自动收集的数据（例如，页面访问的持续时间）。</p>
+            </li>
+            <li>
+              <p><strong>网站</strong>是指博语通（PollyTalkie），可从<a href="https://www.pollytalkie.com/" rel="external nofollow noopener" target="_blank">https://www.pollytalkie.com/</a>访问</p>
+            </li>
+            <li>
+              <p><strong>您</strong>是指访问或使用服务的个人，或代表该个人访问或使用服务的公司或其他法律实体（如适用）。</p>
+            </li>
+          </ul>
+        </section>
+
+        <section class="mb-8">
+          <h2 class="text-2xl font-semibold mb-4">收集和使用您的个人数据</h2>
+          <h3 class="text-xl font-medium mb-2">收集的数据类型</h3>
+
+          <h4 class="text-lg font-medium mb-2">个人数据</h4>
+          <p>在使用我们的服务时，我们可能会要求您向我们提供某些可用于联系或识别您的个人身份信息。个人身份信息可能包括但不限于：</p>
+          <ul class="list-disc pl-6 mt-2">
+            <li>
+              <p>电子邮件地址</p>
+            </li>
+            <li>
+              <p>姓名</p>
+            </li>
+            <li>
+              <p>使用数据</p>
+            </li>
+          </ul>
+
+          <h4 class="text-lg font-medium mb-2 mt-4">使用数据</h4>
+          <p>使用数据在使用服务时自动收集。</p>
+          <br/>
+          <p>使用数据可能包括您设备的互联网协议地址（例如IP地址）、浏览器类型、浏览器版本、您访问的我们服务页面、访问时间和日期、在这些页面上花费的时间、唯一设备标识符和其他诊断数据等信息。</p>
+          <br/>
+          <p>当您通过移动设备访问服务时，我们可能会自动收集某些信息，包括但不限于您使用的移动设备类型、您的移动设备唯一ID、您移动设备的IP地址、您的移动操作系统、您使用的移动互联网浏览器类型、唯一设备标识符和其他诊断数据。</p>
+        </section>
+
+        <section class="mb-8">
+          <h2 class="text-2xl font-semibold mb-4">联系我们</h2>
+          <p>如果您对本隐私政策有任何问题，您可以联系我们：</p>
+          <ul class="list-none pl-6 mt-2">
+            <li>通过电子邮件：<a href="mailto:support@pollytalkie.com">support@pollytalkie.com</a></li>
+            <li>访问我们网站上的此页面：<a href="/zh/contact" target="_blank" rel="noopener noreferrer">联系我们</a></li>
+          </ul>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>

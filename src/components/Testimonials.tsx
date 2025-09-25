@@ -1,0 +1,165 @@
+import React, { useEffect, useState } from 'react';
+
+interface TestimonialProps {
+  locale: string;
+}
+
+interface Testimonial {
+  name: string;
+  location: string;
+  image: string;
+  text: string;
+}
+
+export function Testimonials({ locale }: TestimonialProps) {
+  const [activeIndex, setActiveIndex] = useState(0);
+  
+  // Testimonials data based on locale
+  const testimonials: Testimonial[] = locale === 'zh' ? [
+    {
+      name: "李明",
+      location: "北京，中国",
+      image: "/testimonials/user1.jpg",
+      text: "博语通（PollyTalkie）完全改变了我学习英语的方式。AI对话非常自然，我在3个月内的进步比传统课堂2年的学习还要多！"
+    },
+    {
+      name: "张伟",
+      location: "上海，中国",
+      image: "/testimonials/user2.jpg",
+      text: "作为一个有语言学习焦虑的人，博语通（PollyTalkie）对我来说是一个改变游戏规则的工具。我可以练习英语而不用担心被评判，个性化的反馈帮助我纠正了我甚至不知道自己有的发音问题。"
+    },
+    {
+      name: "王芳",
+      location: "广州，中国",
+      image: "/testimonials/user3.jpg",
+      text: "性价比令人难以置信！我曾经每小时花¥400请家教，但现在我每天都能以更低的价格练习日语。无限版计划中的专业词汇主题非常适合我的商务需求。"
+    },
+    {
+      name: "刘强",
+      location: "成都，中国",
+      image: "/testimonials/user4.jpg",
+      text: "我尝试过市面上所有的语言学习应用，博语通（PollyTalkie）是迄今为止最有效的。AI能适应我的学习风格，并在恰到好处的水平上挑战我。我的德语在短短几周内就有了显著提高！"
+    },
+    {
+      name: "陈静",
+      location: "深圳，中国",
+      image: "/testimonials/user5.jpg",
+      text: "全天候支持非常棒！每当我对学习路径或技术问题有疑问时，团队都会迅速回应。无限版计划中的专属顾问帮助我创建了完美的学习计划。"
+    },
+    {
+      name: "赵阳",
+      location: "杭州，中国",
+      image: "/testimonials/user6.jpg",
+      text: "作为一名语言老师，我对博语通（PollyTalkie）的教学方法印象深刻。它将语法自然地融入对话的方式非常出色。我现在向我所有的学生推荐它！"
+    }
+  ] : [
+    {
+      name: "Sarah Johnson",
+      location: "New York, USA",
+      image: "/testimonials/user1.jpg",
+      text: "PollyTalkie has completely transformed my Spanish learning journey. The AI conversations feel incredibly natural, and I've made more progress in 3 months than I did in 2 years of traditional classes!"
+    },
+    {
+      name: "Michael Chen",
+      location: "Toronto, Canada",
+      image: "/testimonials/user2.jpg",
+      text: "As someone who struggled with language learning anxiety, PollyTalkie has been a game-changer. I can practice French without the fear of judgment, and the personalized feedback has helped me correct pronunciation issues I didn't even know I had."
+    },
+    {
+      name: "Emma Rodriguez",
+      location: "London, UK",
+      image: "/testimonials/user3.jpg",
+      text: "The value for money is incredible! I was spending $60 per hour with a tutor, but now I practice Japanese daily for a fraction of the cost. The specialized vocabulary topics in the Unlimited plan are perfect for my business needs."
+    },
+    {
+      name: "David Kim",
+      location: "Sydney, Australia",
+      image: "/testimonials/user4.jpg",
+      text: "I've tried every language app out there, and PollyTalkie is by far the most effective. The AI adapts to my learning style and challenges me at just the right level. My German has improved dramatically in just weeks!"
+    },
+    {
+      name: "Sophia Patel",
+      location: "Berlin, Germany",
+      image: "/testimonials/user5.jpg",
+      text: "The 24/7 support is fantastic! Whenever I have questions about my learning path or technical issues, the team responds quickly. The dedicated consultant in the Unlimited plan has helped me create a perfect study schedule."
+    },
+    {
+      name: "Lucas Moreau",
+      location: "Paris, France",
+      image: "/testimonials/user6.jpg",
+      text: "As a language teacher myself, I'm impressed by the pedagogical approach of PollyTalkie. The way it integrates grammar naturally into conversations is brilliant. I now recommend it to all my students!"
+    }
+  ];
+
+  // Auto-rotate testimonials
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % testimonials.length);
+    }, 5000);
+    
+    return () => clearInterval(interval);
+  }, [testimonials.length]);
+
+  return (
+    <div className="relative overflow-hidden">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {testimonials.map((testimonial, index) => (
+          <div
+            key={index}
+            className={`bg-card rounded-lg p-6 shadow-sm border transition-all duration-300 ${
+              index === activeIndex ? 'ring-2 ring-primary scale-105' : ''
+            }`}
+          >
+            <div className="flex items-start gap-4">
+              <div className="flex-shrink-0">
+                <div className="w-12 h-12 rounded-full bg-muted flex items-center justify-center overflow-hidden">
+                  <img
+                    src={testimonial.image}
+                    alt={testimonial.name}
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                      // Fallback to initials if image fails to load
+                      const target = e.target as HTMLImageElement;
+                      target.style.display = 'none';
+                      const parent = target.parentElement;
+                      if (parent) {
+                        parent.innerHTML = `<span class="text-sm font-medium">${testimonial.name.charAt(0)}</span>`;
+                      }
+                    }}
+                  />
+                </div>
+              </div>
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center gap-2 mb-2">
+                  <h4 className="font-semibold text-sm">{testimonial.name}</h4>
+                  <span className="text-xs text-muted-foreground">•</span>
+                  <span className="text-xs text-muted-foreground">{testimonial.location}</span>
+                </div>
+                <blockquote className="text-sm text-muted-foreground leading-relaxed">
+                  <svg className="w-4 h-4 text-primary mb-2" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+                  </svg>
+                  {testimonial.text}
+                </blockquote>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+      
+      {/* Indicators */}
+      <div className="flex justify-center mt-8 gap-2">
+        {testimonials.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setActiveIndex(index)}
+            className={`w-2 h-2 rounded-full transition-colors ${
+              index === activeIndex ? 'bg-primary' : 'bg-muted'
+            }`}
+            aria-label={`Go to testimonial ${index + 1}`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}

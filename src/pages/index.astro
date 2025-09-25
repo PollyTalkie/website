@@ -1,0 +1,51 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+import { Logo } from '../components/ui/Logo';
+import { ChatDemo } from '../components/ChatDemo';
+import { Testimonials } from '../components/Testimonials';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import { URLS } from '../lib/env';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const features = [
+{{ ... }}
+                href={URLS.portal.signin}
+                class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-11 px-8"
+              >
+                {t('hero.signIn')}
+              </a>
+              <a 
+                href={URLS.portal.signup}
+                class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-11 px-8"
+            >
+              {t('hero.getStarted')}
+            </a>
+              <a 
+                href={URLS.portal.download}
+                class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-secondary text-secondary-foreground hover:bg-secondary/80 h-11 px-8 gap-2 bg-primary/10 hover:bg-primary/20 border-2 border-primary/20"
+              >
+                <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+{{ ... }}
+          </h2>
+          <p class="mx-auto max-w-[600px] text-zinc-500 md:text-xl dark:text-zinc-400 animate-slide-up">
+            {t('home.cta.description')}
+          </p>
+          <div class="animate-slide-up">
+            <a
+              href={URLS.portal.signup}
+              class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-11 px-8"
+            >
+              {t('hero.getStarted')}
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+{{ ... }}
+
+  <Footer />
+</Layout>

@@ -1,0 +1,264 @@
+{
+  "nav": {
+    "pricing": "Pricing",
+    "blog": "Blog",
+    "download": "Download",
+    "terms": "Terms & Service",
+    "privacy": "Privacy Policy",
+    "about": "About",
+    "contact": "Contact",
+    "downloadApp": "Download App",
+    "scanToDownload": "Scan to download PollyTalkie app"
+  },
+  "home": {
+    "hero": {
+      "tagline": "Learn with PollyTalkie, Talk like a native! Language learning reimagined: Natural conversations, real-world scenarios, personalized to you."
+    },
+    "buttons": {
+      "startLearning": "Start Learning",
+      "tryDemo": "Try Demo",
+      "downloadApp": "Download App"
+    },
+    "testimonials": {
+      "title": "What Our Users Say",
+      "subtitle": "Join thousands of satisfied language learners worldwide",
+      "items": [
+        {
+          "name": "Sarah Johnson",
+          "location": "New York, USA",
+          "image": "/testimonials/user1.jpg",
+          "text": "PollyTalkie has completely transformed my Spanish learning journey. The AI conversations feel incredibly natural, and I've made more progress in 3 months than I did in 2 years of traditional classes!"
+        },
+        {
+          "name": "Michael Chen",
+          "location": "Toronto, Canada",
+          "image": "/testimonials/user2.jpg",
+          "text": "As someone who struggled with language learning anxiety, PollyTalkie has been a game-changer. I can practice French without the fear of judgment, and the personalized feedback has helped me correct pronunciation issues I didn't even know I had."
+        },
+        {
+          "name": "Emma Rodriguez",
+          "location": "London, UK",
+          "image": "/testimonials/user3.jpg",
+          "text": "The value for money is incredible! I was spending $60 per hour with a tutor, but now I practice Japanese daily for a fraction of the cost. The specialized vocabulary topics in the Unlimited plan are perfect for my business needs."
+        },
+        {
+          "name": "David Kim",
+          "location": "Sydney, Australia",
+          "image": "/testimonials/user4.jpg",
+          "text": "I've tried every language app out there, and PollyTalkie is by far the most effective. The AI adapts to my learning style and challenges me at just the right level. My German has improved dramatically in just weeks!"
+        },
+        {
+          "name": "Sophia Patel",
+          "location": "Berlin, Germany",
+          "image": "/testimonials/user5.jpg",
+          "text": "The 24/7 support is fantastic! Whenever I have questions about my learning path or technical issues, the team responds quickly. The dedicated consultant in the Unlimited plan has helped me create a perfect study schedule."
+        },
+        {
+          "name": "Lucas Moreau",
+          "location": "Paris, France",
+          "image": "/testimonials/user6.jpg",
+          "text": "As a language teacher myself, I'm impressed by the pedagogical approach of PollyTalkie. The way it integrates grammar naturally into conversations is brilliant. I now recommend it to all my students!"
+        }
+      ]
+    },
+    "features": {
+      "title": "Why Choose PollyTalkie?",
+      "naturalConversations": {
+        "title": "Natural Conversations",
+        "description": "Practice real-world conversations with our AI language partners"
+      },
+      "multipleLanguages": {
+        "title": "Multiple Languages",
+        "description": "Learn any language with native-speaking AI tutors"
+      },
+      "personalizedLearning": {
+        "title": "Personalized Learning",
+        "description": "Adaptive learning path based on your progress and interests"
+      },
+      "rapidProgress": {
+        "title": "Rapid Progress",
+        "description": "Learn faster through interactive conversations and feedback"
+      }
+    },
+    "cta": {
+      "title": "Ready to Start Your Language Journey?",
+      "description": "Join thousands of learners who are already chatting their way to fluency.",
+      "button": "Get Started for Free"
+    }
+  },
+  "pricing": {
+    "title": "Choose Your Plan",
+    "subtitle": "Start for free, upgrade when you're ready",
+    "mostPopular": "Most Popular",
+    "freeTrialBadge": "Free Trial",
+    "earlyAdopter": "Early Adopter Price",
+    "tiers": {
+      "regular": {
+        "name": "Regular",
+        "price": "$45",
+        "earlyPrice": "$30",
+        "period": "/month",
+        "description": "Perfect for consistent learners",
+        "features": {
+          "feature1": "15 hours of conversation per month",
+          "feature2": "AI-powered pronunciation feedback",
+          "feature3": "Progress tracking and analytics",
+          "feature4": "Multiple language support",
+          "feature5": "Mobile and web access",
+          "feature6": "Community support"
+        },
+        "cta": "Start Free Trial"
+      },
+      "aggressive": {
+        "name": "Aggressive",
+        "price": "$85",
+        "earlyPrice": "$70",
+        "period": "/month",
+        "description": "For serious language learners",
+        "features": {
+          "feature1": "40 hours of conversation per month",
+          "feature2": "Advanced AI tutoring features",
+          "feature3": "Personalized learning path",
+          "feature4": "Priority customer support",
+          "feature5": "Specialized vocabulary topics",
+          "feature6": "Weekly progress reports"
+        },
+        "cta": "Get Started"
+      },
+      "unlimited": {
+        "name": "Unlimited",
+        "price": "$150",
+        "earlyPrice": "$120",
+        "period": "/month",
+        "description": "Unlimited learning potential",
+        "features": {
+          "feature1": "Unlimited conversation hours",
+          "feature2": "Dedicated learning consultant",
+          "feature3": "Custom curriculum design",
+          "feature4": "24/7 priority support",
+          "feature5": "Advanced analytics dashboard",
+          "feature6": "Group learning sessions"
+        },
+        "cta": "Go Unlimited"
+      },
+      "school": {
+        "name": "School/Enterprise",
+        "price": "Custom",
+        "description": "Tailored solutions for institutions",
+        "features": {
+          "feature1": "Bulk user management",
+          "feature2": "Custom integrations",
+          "feature3": "Advanced reporting",
+          "feature4": "Dedicated account manager",
+          "feature5": "Custom branding options",
+          "feature6": "SLA guarantees"
+        },
+        "cta": "Contact Sales"
+      }
+    },
+    "faqTitle": "Frequently Asked Questions",
+    "addOn": {
+      "faqQuestion": "Can I add more hours to my Regular plan?",
+      "faqAnswer": "Yes! You can purchase additional conversation time in 8-hour blocks for just $20 each.",
+      "title": "Add-on Hours",
+      "description": "Need more conversation time? Add extra hours to your Regular plan.",
+      "pricePerUnit": "for 8 additional hours",
+      "totalTime": "Total: {0} hours per month",
+      "totalMonthlyPrice": "Total monthly price: ",
+      "upgradeHint": "Consider upgrading to Aggressive plan for better value!",
+      "purchaseButton": "Purchase with Add-ons",
+      "orText": "OR",
+      "upgradeButton": "Upgrade to Aggressive"
+    },
+    "faq": {
+      "question1": "Can I cancel anytime?",
+      "answer1": "Yes, you can cancel your subscription at any time. Your access will continue until the end of your current billing period.",
+      "question2": "Is there a free trial?",
+      "answer2": "Yes! The Regular plan comes with a free trial so you can experience PollyTalkie risk-free.",
+      "question3": "What languages are supported?",
+      "answer3": "We support over 20 languages including Spanish, French, German, Italian, Portuguese, Chinese, Japanese, Korean, and more.",
+      "question4": "How does billing work?",
+      "answer4": "All plans are billed monthly. You can upgrade, downgrade, or cancel at any time through your account settings."
+    }
+  },
+  "aboutPage": {
+    "title": "About PollyTalkie",
+    "mission": {
+      "title": "Our Mission",
+      "content": "At PollyTalkie, we believe that language learning should be natural, engaging, and accessible to everyone. Our mission is to break down language barriers through innovative AI technology that makes conversation practice available 24/7."
+    },
+    "technology": {
+      "title": "Our Technology",
+      "content": "We leverage cutting-edge artificial intelligence and natural language processing to create realistic conversation partners. Our AI tutors adapt to your learning style, provide instant feedback, and help you build confidence in real-world scenarios."
+    },
+    "team": {
+      "title": "Our Team",
+      "content": "Our diverse team of linguists, AI researchers, and education experts work together to create the most effective language learning experience possible. We're passionate about helping people connect across cultures and achieve their language goals."
+    },
+    "values": {
+      "title": "Our Values",
+      "innovation": "Innovation",
+      "innovationDesc": "We continuously push the boundaries of what's possible in language learning technology.",
+      "inclusivity": "Inclusivity",
+      "inclusivityDesc": "We believe language learning should be accessible to learners of all backgrounds and abilities.",
+      "quality": "Quality",
+      "qualityDesc": "We maintain the highest standards in our AI technology and user experience.",
+      "community": "Community",
+      "communityDesc": "We foster a supportive community where learners can grow and succeed together."
+    },
+    "joinUs": {
+      "title": "Join Our Journey",
+      "content": "Whether you're just starting your language learning journey or looking to perfect your skills, PollyTalkie is here to support you every step of the way. Join thousands of learners who are already chatting their way to fluency."
+    }
+  },
+  "contactPage": {
+    "title": "Contact Us",
+    "getInTouch": {
+      "title": "Get in Touch",
+      "content": "Have questions about PollyTalkie? We'd love to hear from you. Send us a message and we'll respond as soon as possible."
+    },
+    "contactInfo": {
+      "phone": "Phone",
+      "email": "Email",
+      "address": "Address"
+    },
+    "followUs": "Follow Us",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "subject": "Subject",
+      "message": "Message",
+      "selectSubject": "Select a subject",
+      "generalInquiry": "General Inquiry",
+      "technicalSupport": "Technical Support",
+      "billing": "Billing",
+      "feedback": "Feedback",
+      "partnership": "Partnership",
+      "send": "Send Message",
+      "sending": "Sending...",
+      "success": "Thank you for your message! We'll get back to you soon.",
+      "error": "Sorry, there was an error sending your message. Please try again."
+    }
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Latest articles about language learning, AI, and more",
+    "readTime": "min read",
+    "viewArticle": "View article",
+    "contribute": "Want to contribute to our blog?",
+    "contactUs": "Contact us"
+  },
+  "footer": {
+    "description": "PollyTalkie - Your AI conversation companion for language learning",
+    "quickLinks": "Quick Links",
+    "legal": "Legal",
+    "connect": "Connect",
+    "newsletter": {
+      "title": "Stay Updated",
+      "description": "Get the latest news and updates from PollyTalkie",
+      "placeholder": "Enter your email",
+      "subscribe": "Subscribe"
+    },
+    "copyright": "© 2024 PollyTalkie. All rights reserved."
+  }
+}
