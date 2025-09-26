@@ -26,8 +26,7 @@ export const getWebsiteUrl = () => {
 // Get the portal base URL
 export const getPortalUrl = () => {
   const protocol = getProtocol();
-  const port = isLocal() ? ':3000' : ''; // Assume portal runs on 3000 locally
-  return `${protocol}//app.${ENV.DOMAIN}${port}`;
+  return `${protocol}//app.${ENV.DOMAIN}`;
 };
 
 // Get specific portal URLs
