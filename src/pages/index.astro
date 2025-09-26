@@ -1,6 +1,8 @@
 ---
 import { defaultLang } from '../i18n/utils';
+import { getWebsiteUrl } from '../lib/env';
 
-// Redirect to default language
-return Astro.redirect(`/${defaultLang}/`);
+// Redirect to default language, preserving www subdomain
+const websiteUrl = getWebsiteUrl();
+return Astro.redirect(`${websiteUrl}/${defaultLang}/`);
 ---
