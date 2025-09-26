@@ -1,0 +1,74 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navigation from '../../components/Navigation.astro';
+import Footer from '../../components/Footer.astro';
+import { useTranslations, getStaticPaths } from '../../i18n/utils';
+import { URLS } from '../../lib/env';
+import { DownloadPlatforms } from '../../components/DownloadPlatforms';
+import { QRDownloadSection } from '../../components/QRDownloadSection';
+
+export { getStaticPaths };
+
+const { lang } = Astro.params;
+const t = useTranslations(lang as 'en' | 'zh');
+---
+
+<Layout title={`${t('download.title')} - PollyTalkie`} lang={lang}>
+  <Navigation />
+  
+  <main class="flex min-h-screen flex-col items-center pt-32 py-12 bg-background">
+    <div class="container mx-auto px-4 md:px-6">
+      <div class="text-center space-y-4 mb-12">
+        <h1 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+          {t('download.title')}
+        </h1>
+        <p class="mx-auto max-w-[700px] text-zinc-500 md:text-xl dark:text-zinc-400">
+          {t('download.subtitle')}
+        </p>
+      </div>
+
+      <!-- Platform Cards -->
+      <DownloadPlatforms locale={lang} client:load />
+
+      <!-- QR Code Download Section -->
+      <QRDownloadSection locale={lang} client:load />
+
+      <!-- Help Section -->
+      <div class="mt-12 text-center">
+        <h2 class="text-2xl font-bold mb-4">{t('download.needHelp')}</h2>
+        <p class="text-muted-foreground">
+          {t('download.troubleDownloading')}{" "}
+          <a href={`/${lang}/contact`} class="text-primary hover:underline">
+            {t('download.contactSupport')}
+          </a>
+          .
+        </p>
+      </div>
+
+      <!-- Benefits Section -->
+      <div class="mt-12 p-6 bg-card text-card-foreground rounded-lg border border-border max-w-2xl mx-auto">
+        <h2 class="text-xl font-semibold mb-4">{t('download.whyMobile')}</h2>
+        <ul class="grid gap-4 sm:grid-cols-2">
+          <li class="flex items-start gap-2">
+            <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">✓</span>
+            <span>{t('download.benefit1')}</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">✓</span>
+            <span>{t('download.benefit2')}</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">✓</span>
+            <span>{t('download.benefit3')}</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">✓</span>
+            <span>{t('download.benefit4')}</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>
