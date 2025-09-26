@@ -10,9 +10,20 @@
     "downloadApp": "下载应用",
     "scanToDownload": "扫码下载博语通应用"
   },
+  "hero": {
+    "title": "使用博语通，像说母语一样流利使用新语言！",
+    "subtitle": "语言学习新境界：自然对话，真实场景，为你量身定制。",
+    "getStarted": "开始学习",
+    "signIn": "登录"
+  },
   "home": {
+    "title": "博语通 - AI语言学习",
     "hero": {
       "tagline": "使用博语通（PollyTalkie）学习外语，像使用母语一样交谈！重构语言学习新方式：自然对话，真实场景，为你量身定制。"
+    },
+    "demo": {
+      "title": "观看博语通实际演示",
+      "subtitle": "看看我们的AI语言导师如何适应您的学习风格，并实时提供个性化反馈。"
     },
     "buttons": {
       "startLearning": "开始学习",

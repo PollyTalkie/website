@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import { URLS } from '../lib/env';
 import { PricingCalculator } from '../components/PricingCalculator';
 
 const lang = getLangFromUrl(Astro.url);
@@ -24,7 +25,7 @@ const tiers = [
       t('pricing.tiers.regular.features.feature6'),
     ],
     cta: t('pricing.tiers.regular.cta'),
-    href: "https://portal.pollytalkie.com/signup?plan=regular",
+    href: `${URLS.portal.signup}?plan=regular`,
     freeTrial: true,
   },
   {
@@ -42,7 +43,7 @@ const tiers = [
       t('pricing.tiers.aggressive.features.feature6'),
     ],
     cta: t('pricing.tiers.aggressive.cta'),
-    href: "https://portal.pollytalkie.com/signup?plan=aggressive",
+    href: `${URLS.portal.signup}?plan=aggressive`,
     featured: true,
     freeTrial: false,
   },
@@ -61,7 +62,7 @@ const tiers = [
       t('pricing.tiers.unlimited.features.feature6'),
     ],
     cta: t('pricing.tiers.unlimited.cta'),
-    href: "https://portal.pollytalkie.com/signup?plan=unlimited",
+    href: `${URLS.portal.signup}?plan=unlimited`,
     freeTrial: false,
   },
   {

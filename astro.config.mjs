@@ -12,11 +12,30 @@ export default defineConfig({
       applyBaseStyles: false,
     }),
   ],
-  output: 'static',
+  output: 'hybrid',
   adapter: cloudflare(),
   server: {
     port: parseInt(PORT),
     host: true
+  },
+  vite: {
+    server: {
+      host: true,
+      // Explicitly list all possible hosts that might be used in development
+      allowedHosts: [
+        'localhost',
+        'pollytalkie.com',
+        'www.pollytalkie.com',
+        'api.pollytalkie.com',
+        'app.pollytalkie.com',
+        'pollytalkie.cn',
+        'www.pollytalkie.cn',
+        'api.pollytalkie.cn',
+        'app.pollytalkie.cn',
+      ],
+      // Reset HMR to default to avoid potential conflicts
+      hmr: true,
+    },
   },
   i18n: {
     defaultLocale: 'en',

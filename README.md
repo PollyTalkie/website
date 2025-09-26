@@ -83,20 +83,52 @@ public/                 # Static assets
    npm install
    ```
 
-2. **Start development server**:
+2. **Configure environment variables**:
+   ```bash
+   cp .env.example .env
+   # Edit .env to set your domain and port preferences
+   ```
+
+3. **Start development server**:
    ```bash
    npm run dev
    ```
 
-3. **Build for production**:
+4. **Build for production**:
    ```bash
    npm run build
    ```
 
-4. **Preview production build**:
+5. **Preview production build**:
    ```bash
    npm run preview
    ```
+
+## ⚙️ Environment Configuration
+
+The website supports environment-based URL configuration:
+
+### Environment Variables
+
+- `PORT`: Development server port (default: 3180)
+- `PUBLIC_DOMAIN`: Domain for URL generation (default: pollytalkie.com)
+
+### URL Structure
+
+- **Local Development**: 
+  - Website: `http://www.pollytalkie.local:3180`
+  - Portal: `http://app.pollytalkie.local:3000`
+
+- **Production**: 
+  - Website: `https://www.pollytalkie.com`
+  - Portal: `https://app.pollytalkie.com`
+
+### Configuration Files
+
+- `.env` - Local development settings
+- `.env.example` - Template with default values
+
+All portal links (signup, signin, dashboard) automatically use the correct URLs based on your environment configuration.
 
 ## 🎨 Key Features
 

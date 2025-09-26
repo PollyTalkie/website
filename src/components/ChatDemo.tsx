@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Logo } from './ui/Logo';
 
 interface ChatDemoProps {
@@ -25,7 +26,7 @@ export function ChatDemo({ locale }: ChatDemoProps) {
     { type: 'user', text: "这与多邻国等其他应用有什么不同？" },
     { type: 'bot', text: "好问题！虽然多邻国专注于游戏化练习和翻译，但博语通专门通过真实对话来提升你的口语流利度。我们的核心优势在于：针对你的发音和语调提供个性化反馈，根据你的熟练程度调整对话难度，以及创建你在实际生活中真正会用到的实用对话场景。我们的设计目标就是帮助你说出更自然更自信的语言！" },
     { type: 'user', text: "我是语言初学者，可以使用博语通学习吗？" },
-    { type: 'bot', text: "非常感谢你的提问！博语通最适合已经掌握了基本语言知识的学习者。如果你是初学者，我们建议先使用多邻国等应用学习基础词汇和语法，然后再使用博语通来提升你的对话能力和流利度。我们的优势在于帮助你进阶，让你从"知道语言"到"自然使用语言"！" },
+    { type: 'bot', text: "非常感谢你的提问！博语通最适合已经掌握了基本语言知识的学习者。如果你是初学者，我们建议先使用多邻国等应用学习基础词汇和语法，然后再使用博语通来提升你的对话能力和流利度。我们的优势在于帮助你进阶，让你从\"知道语言\"到\"自然使用语言\"！" },
     { type: 'user', text: "听起来很有趣。我每天需要投入多少时间？" },
     { type: 'bot', text: "这完全取决于你！有些学习者每天只与我聊10分钟，而其他人则喜欢进行30分钟的长时间对话。关键是坚持——即使是短暂的定期练习也会随着时间的推移带来显著的进步。" },
     { type: 'user', text: "使用这个应用我真的能流利吗？" },
@@ -55,8 +56,17 @@ export function ChatDemo({ locale }: ChatDemoProps) {
     }
   }, [currentDialogIndex, isTyping]);
 
+  // Start the conversation automatically
   useEffect(() => {
-    let timer: NodeJS.Timeout | null = null;
+    const startTimer = setTimeout(() => {
+      setCurrentDialogIndex(0); // Start with first message (bot)
+    }, 1000);
+    
+    return () => clearTimeout(startTimer);
+  }, []); // Only run once on mount
+
+  useEffect(() => {
+    let timer: number | null = null;
     
     // Auto-advance the conversation with appropriate animations
     if (currentDialogIndex < dialogMessages.length - 1) {
@@ -65,14 +75,14 @@ export function ChatDemo({ locale }: ChatDemoProps) {
       
       if (currentMessage.type === 'bot' && nextMessage.type === 'user') {
         // After bot message, simulate user typing
-        timer = setTimeout(() => {
+        timer = window.setTimeout(() => {
           // Start user typing animation
           setUserTyping(true);
           
           // Gradually type out the user message in the input field
           let charIndex = 0;
           const userMessage = nextMessage.text;
-          const typingInterval = setInterval(() => {
+          const typingInterval = window.setInterval(() => {
             if (charIndex <= userMessage.length) {
               setUserInputValue(userMessage.substring(0, charIndex));
               charIndex++;
@@ -87,19 +97,16 @@ export function ChatDemo({ locale }: ChatDemoProps) {
               }, 500);
             }
           }, 50);
-          
-          // Store the interval in our timer reference for cleanup
-          timer = typingInterval as unknown as NodeJS.Timeout;
         }, 2000);
       } else if (currentMessage.type === 'user' && nextMessage.type === 'bot') {
         // After user message, show bot typing indicator
-        timer = setTimeout(() => {
+        timer = window.setTimeout(() => {
           setIsTyping(true);
           
           // Simulate typing time based on message length
           const typingDelay = nextMessage.text.length * 20 + 500;
           
-          const botTypingTimer = setTimeout(() => {
+          const botTypingTimer = window.setTimeout(() => {
             setIsTyping(false);
             
             // After typing is done, show the bot message
@@ -113,7 +120,7 @@ export function ChatDemo({ locale }: ChatDemoProps) {
       }
     } else {
       // When conversation is complete, restart after a delay
-      timer = setTimeout(() => {
+      timer = window.setTimeout(() => {
         setCurrentDialogIndex(0);
         setUserInputValue("");
         setUserTyping(false);
@@ -149,9 +156,12 @@ export function ChatDemo({ locale }: ChatDemoProps) {
           className="p-4 space-y-4 h-[400px] overflow-y-auto scroll-smooth"
         >
           {dialogMessages.slice(0, currentDialogIndex + 1).map((message, index) => (
-            <div
+            <motion.div
               key={index}
-              className={`flex ${message.type === 'user' ? 'justify-end' : 'justify-start'} animate-fade-in`}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3 }}
+              className={`flex ${message.type === 'user' ? 'justify-end' : 'justify-start'}`}
             >
               <div 
                 className={`max-w-[90%] p-3 rounded-lg ${message.type === 'user' 
@@ -160,7 +170,7 @@ export function ChatDemo({ locale }: ChatDemoProps) {
               >
                 <p>{message.text}</p>
               </div>
-            </div>
+            </motion.div>
           ))}
           
           {/* Typing indicator */}
@@ -168,9 +178,21 @@ export function ChatDemo({ locale }: ChatDemoProps) {
             <div className="flex justify-start">
               <div className="bg-secondary text-secondary-foreground rounded-lg rounded-tl-none p-3 max-w-[90%]">
                 <div className="flex space-x-1">
-                  <div className="w-2 h-2 bg-current rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
-                  <div className="w-2 h-2 bg-current rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
-                  <div className="w-2 h-2 bg-current rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
+                  <motion.div 
+                    animate={{ y: [0, -5, 0] }}
+                    transition={{ repeat: Infinity, duration: 0.5 }}
+                    className="w-2 h-2 bg-current rounded-full"
+                  />
+                  <motion.div 
+                    animate={{ y: [0, -5, 0] }}
+                    transition={{ repeat: Infinity, duration: 0.5, delay: 0.15 }}
+                    className="w-2 h-2 bg-current rounded-full"
+                  />
+                  <motion.div 
+                    animate={{ y: [0, -5, 0] }}
+                    transition={{ repeat: Infinity, duration: 0.5, delay: 0.3 }}
+                    className="w-2 h-2 bg-current rounded-full"
+                  />
                 </div>
               </div>
             </div>

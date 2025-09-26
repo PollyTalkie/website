@@ -7,6 +7,7 @@ export interface Props {
   lang?: string;
 }
 
+import { languages } from '../i18n/utils';
 const { title, description = "PollyTalkie - Your AI conversation companion for language learning", lang = "en" } = Astro.props;
 ---
 
@@ -30,6 +31,15 @@ const { title, description = "PollyTalkie - Your AI conversation companion for l
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content="/og-image.png" />
+
+    <!-- SEO hreflang links -->
+    {Object.keys(languages).map(altLang => (
+      <link
+        rel="alternate"
+        hreflang={altLang}
+        href={Astro.url.origin + Astro.url.pathname.replace(`/${lang}/`, `/${altLang}/`)}
+      />
+    ))}
     
     <!-- Preconnect to external domains -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />

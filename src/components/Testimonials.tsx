@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
+import { motion } from 'framer-motion';
 
 interface TestimonialProps {
   locale: string;
@@ -13,6 +14,8 @@ interface Testimonial {
 
 export function Testimonials({ locale }: TestimonialProps) {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [autoplay, setAutoplay] = useState(true);
+  const autoplayRef = useRef<number | null>(null);
   
   // Testimonials data based on locale
   const testimonials: Testimonial[] = locale === 'zh' ? [
@@ -91,74 +94,90 @@ export function Testimonials({ locale }: TestimonialProps) {
     }
   ];
 
-  // Auto-rotate testimonials
+  // Handle autoplay
   useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveIndex((prev) => (prev + 1) % testimonials.length);
-    }, 5000);
-    
-    return () => clearInterval(interval);
-  }, [testimonials.length]);
+    if (autoplay) {
+      autoplayRef.current = window.setInterval(() => {
+        setActiveIndex((prev) => (prev + 1) % testimonials.length);
+      }, 5000);
+    }
+
+    return () => {
+      if (autoplayRef.current) {
+        clearInterval(autoplayRef.current);
+      }
+    };
+  }, [autoplay, testimonials.length]);
+
+  // Pause autoplay on hover
+  const handleMouseEnter = () => setAutoplay(false);
+  const handleMouseLeave = () => setAutoplay(true);
 
   return (
-    <div className="relative overflow-hidden">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {testimonials.map((testimonial, index) => (
-          <div
-            key={index}
-            className={`bg-card rounded-lg p-6 shadow-sm border transition-all duration-300 ${
-              index === activeIndex ? 'ring-2 ring-primary scale-105' : ''
-            }`}
-          >
-            <div className="flex items-start gap-4">
-              <div className="flex-shrink-0">
-                <div className="w-12 h-12 rounded-full bg-muted flex items-center justify-center overflow-hidden">
-                  <img
-                    src={testimonial.image}
-                    alt={testimonial.name}
-                    className="w-full h-full object-cover"
-                    onError={(e) => {
-                      // Fallback to initials if image fails to load
-                      const target = e.target as HTMLImageElement;
-                      target.style.display = 'none';
-                      const parent = target.parentElement;
-                      if (parent) {
-                        parent.innerHTML = `<span class="text-sm font-medium">${testimonial.name.charAt(0)}</span>`;
-                      }
-                    }}
-                  />
+    <div className="max-w-4xl mx-auto">
+      <div 
+        className="relative" 
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
+        <div className="overflow-hidden">
+          <div className="relative">
+            {testimonials.map((testimonial, index) => (
+              <motion.div
+                key={index}
+                className={`${
+                  index === activeIndex ? 'block' : 'hidden'
+                } bg-card rounded-lg shadow-lg p-6 md:p-8`}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.5 }}
+              >
+                <div className="flex flex-col md:flex-row gap-6 items-start md:items-center">
+                  <div className="flex-shrink-0">
+                    <div className="h-20 w-20 rounded-full bg-primary/10 flex items-center justify-center border-2 border-primary">
+                      <span className="text-2xl font-bold text-primary">
+                        {testimonial.name.charAt(0)}
+                      </span>
+                    </div>
+                  </div>
+                  <div className="flex-1">
+                    <div className="mb-4">
+                      <svg className="h-8 w-8 text-primary/20 mb-2" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+                      </svg>
+                      <p className="text-lg italic">{testimonial.text}</p>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold">{testimonial.name}</h4>
+                      <p className="text-sm text-muted-foreground">{testimonial.location}</p>
+                    </div>
+                  </div>
                 </div>
-              </div>
-              <div className="flex-1 min-w-0">
-                <div className="flex items-center gap-2 mb-2">
-                  <h4 className="font-semibold text-sm">{testimonial.name}</h4>
-                  <span className="text-xs text-muted-foreground">•</span>
-                  <span className="text-xs text-muted-foreground">{testimonial.location}</span>
-                </div>
-                <blockquote className="text-sm text-muted-foreground leading-relaxed">
-                  <svg className="w-4 h-4 text-primary mb-2" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
-                  </svg>
-                  {testimonial.text}
-                </blockquote>
-              </div>
-            </div>
+              </motion.div>
+            ))}
           </div>
-        ))}
-      </div>
-      
-      {/* Indicators */}
-      <div className="flex justify-center mt-8 gap-2">
-        {testimonials.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => setActiveIndex(index)}
-            className={`w-2 h-2 rounded-full transition-colors ${
-              index === activeIndex ? 'bg-primary' : 'bg-muted'
-            }`}
-            aria-label={`Go to testimonial ${index + 1}`}
-          />
-        ))}
+        </div>
+
+        {/* Testimonial navigation dots */}
+        <div className="flex justify-center mt-6 gap-2">
+          {testimonials.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => {
+                setActiveIndex(index);
+                setAutoplay(false);
+                setTimeout(() => setAutoplay(true), 10000);
+              }}
+              className={`h-3 w-3 rounded-full transition-colors ${
+                index === activeIndex
+                  ? 'bg-primary'
+                  : 'bg-muted-foreground/30 hover:bg-muted-foreground/50'
+              }`}
+              aria-label={`View testimonial ${index + 1}`}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );

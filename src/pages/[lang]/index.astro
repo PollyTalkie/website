@@ -2,13 +2,16 @@
 import Layout from '../../layouts/Layout.astro';
 import Navigation from '../../components/Navigation.astro';
 import Footer from '../../components/Footer.astro';
-import { getLangFromUrl, useTranslations } from '../../i18n/utils';
 import { Logo } from '../../components/ui/Logo';
 import { ChatDemo } from '../../components/ChatDemo';
 import { Testimonials } from '../../components/Testimonials';
+import { useTranslations, getStaticPaths } from '../../i18n/utils';
+import { URLS } from '../../lib/env';
 
-const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
+export { getStaticPaths };
+
+const { lang } = Astro.params;
+const t = useTranslations(lang as 'en' | 'zh');
 
 const features = [
   {
@@ -34,33 +37,43 @@ const features = [
 ];
 ---
 
-<Layout title="博语通 (PollyTalkie) - 您的AI对话伙伴" lang={lang}>
+<Layout title={`${t('home.title')} - PollyTalkie`} lang={lang}>
   <Navigation />
   
   <main class="flex min-h-screen flex-col items-center">
     <!-- Hero Section with Dialog -->
     <section class="w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-background">
-      <div class="container px-4 md:px-6">
+      <div class="container mx-auto px-4 md:px-6">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           <!-- Left side: App intro -->
           <div class="flex flex-col items-center lg:items-start space-y-6 text-center lg:text-left">
-            <div class="flex items-center gap-4 animate-fade-in">
+            <div class="flex items-center gap-4">
               <Logo size={80} locale={lang} client:load />
               <h1 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
-                博语通 <span class="text-2xl font-normal text-muted-foreground">(PollyTalkie)</span>
+                {lang === 'zh' ? (
+                  <>
+                    博语通 <span class="text-2xl font-normal text-muted-foreground">(PollyTalkie)</span>
+                  </>
+                ) : (
+                  'PollyTalkie'
+                )}
               </h1>
             </div>
-            <div class="max-w-[550px] md:text-xl animate-slide-up">
+            <div class="max-w-[550px] md:text-xl">
               <p class="mb-4 text-2xl font-bold text-primary">
-                使用博语通，像说母语一样流利使用新语言！
+                {lang === 'zh' ? 
+                  "使用博语通，像说母语一样流利使用新语言！" :
+                  "Learn with PollyTalkie, speak like a native!"}
               </p>
               <p class="text-zinc-600 dark:text-zinc-300">
-                语言学习新境界：自然对话，真实场景，为你量身定制。
+                {lang === 'zh' ? 
+                  "语言学习新境界：自然对话，真实场景，为你量身定制。" :
+                  "Language learning reimagined: Natural conversations, real-world scenarios, personalized to you."}
               </p>
             </div>
-            <div class="flex flex-wrap gap-4 justify-center lg:justify-start animate-slide-up">
+            <div class="flex flex-wrap gap-4 justify-center lg:justify-start">
               <a 
-                href="https://portal.pollytalkie.com/auth/signin"
+                href={URLS.portal.signin}
                 class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-11 px-8"
               >
                 {t('home.buttons.startLearning')}
@@ -72,7 +85,7 @@ const features = [
                 {t('home.buttons.tryDemo')}
               </a>
               <a 
-                href="/zh/download"
+                href={`/${lang}/download`}
                 class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-secondary text-secondary-foreground hover:bg-secondary/80 h-11 px-8 gap-2 bg-primary/10 hover:bg-primary/20 border-2 border-primary/20"
               >
                 <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -89,7 +102,7 @@ const features = [
           </div>
           
           <!-- Right side: Chat demo -->
-          <div class="animate-fade-in" id="demo">
+          <div class="w-full max-w-xl mx-auto lg:mx-0 lg:ml-auto" id="demo">
             <ChatDemo locale={lang} client:load />
           </div>
         </div>
@@ -98,7 +111,7 @@ const features = [
 
     <!-- Features Section with Testimonials -->
     <section class="w-full py-12 md:py-24 lg:py-32 bg-muted">
-      <div class="container px-4 md:px-6">
+      <div class="container mx-auto px-4 md:px-6">
         <h2 class="text-3xl font-bold tracking-tighter text-center mb-12 animate-fade-in">
           {t('home.features.title')}
         </h2>
@@ -138,10 +151,10 @@ const features = [
         <!-- Testimonials integrated within the features section -->
         <div class="mt-16 animate-fade-in">
           <h3 class="text-2xl font-bold tracking-tighter text-center mb-2">
-            用户评价
+            {lang === 'zh' ? '用户评价' : 'What Our Users Say'}
           </h3>
           <p class="text-muted-foreground max-w-[700px] mx-auto text-center mb-8">
-            听听我们的学习者如何评价博语通（PollyTalkie）
+            {lang === 'zh' ? '听听我们的学习者如何评价博语通（PollyTalkie）' : 'Hear from our community of language learners'}
           </p>
           <Testimonials locale={lang} client:load />
         </div>
@@ -150,7 +163,7 @@ const features = [
     
     <!-- CTA Section -->
     <section class="w-full py-12 md:py-24 lg:py-32 bg-muted">
-      <div class="container px-4 md:px-6">
+      <div class="container mx-auto px-4 md:px-6">
         <div class="flex flex-col items-center space-y-4 text-center">
           <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl animate-fade-in">
             {t('home.cta.title')}
@@ -160,7 +173,7 @@ const features = [
           </p>
           <div class="animate-slide-up">
             <a 
-              href="https://portal.pollytalkie.com/auth/signin"
+              href={URLS.portal.signin}
               class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-11 px-8 mt-4"
             >
               {t('home.cta.button')}

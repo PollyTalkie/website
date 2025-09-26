@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import { URLS } from '../lib/env';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -60,7 +61,7 @@ const t = useTranslations(lang);
               'Visit our web version to start conversing with AI language partners immediately.'}
           </p>
           <a
-            href="https://portal.pollytalkie.com"
+            href={URLS.portal.base}
             class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-11 px-8"
           >
             {lang === 'zh' ? '访问网页版' : 'Visit Web Version'}

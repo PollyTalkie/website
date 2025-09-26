@@ -10,9 +10,20 @@
     "downloadApp": "Download App",
     "scanToDownload": "Scan to download PollyTalkie app"
   },
+  "hero": {
+    "title": "Learn with PollyTalkie, Talk like a native!",
+    "subtitle": "Language learning reimagined: Natural conversations, real-world scenarios, personalized to you.",
+    "getStarted": "Get Started",
+    "signIn": "Sign In"
+  },
   "home": {
+    "title": "PollyTalkie - AI Language Learning",
     "hero": {
       "tagline": "Learn with PollyTalkie, Talk like a native! Language learning reimagined: Natural conversations, real-world scenarios, personalized to you."
+    },
+    "demo": {
+      "title": "See PollyTalkie in Action",
+      "subtitle": "Watch how our AI language tutor adapts to your learning style and provides personalized feedback in real-time."
     },
     "buttons": {
       "startLearning": "Start Learning",
@@ -63,6 +74,23 @@
     },
     "features": {
       "title": "Why Choose PollyTalkie?",
+      "subtitle": "Experience the future of language learning with our advanced AI technology",
+      "conversational": {
+        "title": "Natural Conversations",
+        "description": "Practice real-world conversations with our AI language partners"
+      },
+      "ai": {
+        "title": "AI-Powered Learning",
+        "description": "Advanced artificial intelligence adapts to your learning style"
+      },
+      "progress": {
+        "title": "Track Your Progress",
+        "description": "Monitor your improvement with detailed analytics and feedback"
+      },
+      "multilingual": {
+        "title": "Multiple Languages",
+        "description": "Learn any language with native-speaking AI tutors"
+      },
       "naturalConversations": {
         "title": "Natural Conversations",
         "description": "Practice real-world conversations with our AI language partners"
