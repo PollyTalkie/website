@@ -209,41 +209,11 @@
       "answer4": "All plans are billed monthly. You can upgrade, downgrade, or cancel at any time through your account settings."
     }
   },
-  "aboutPage": {
-    "title": "About PollyTalkie",
-    "mission": {
-      "title": "Our Mission",
-      "content": "At PollyTalkie, we believe that language learning should be natural, engaging, and accessible to everyone. Our mission is to break down language barriers through innovative AI technology that makes conversation practice available 24/7."
-    },
-    "technology": {
-      "title": "Our Technology",
-      "content": "We leverage cutting-edge artificial intelligence and natural language processing to create realistic conversation partners. Our AI tutors adapt to your learning style, provide instant feedback, and help you build confidence in real-world scenarios."
-    },
-    "team": {
-      "title": "Our Team",
-      "content": "Our diverse team of linguists, AI researchers, and education experts work together to create the most effective language learning experience possible. We're passionate about helping people connect across cultures and achieve their language goals."
-    },
-    "values": {
-      "title": "Our Values",
-      "innovation": "Innovation",
-      "innovationDesc": "We continuously push the boundaries of what's possible in language learning technology.",
-      "inclusivity": "Inclusivity",
-      "inclusivityDesc": "We believe language learning should be accessible to learners of all backgrounds and abilities.",
-      "quality": "Quality",
-      "qualityDesc": "We maintain the highest standards in our AI technology and user experience.",
-      "community": "Community",
-      "communityDesc": "We foster a supportive community where learners can grow and succeed together."
-    },
-    "joinUs": {
-      "title": "Join Our Journey",
-      "content": "Whether you're just starting your language learning journey or looking to perfect your skills, PollyTalkie is here to support you every step of the way. Join thousands of learners who are already chatting their way to fluency."
-    }
-  },
   "contactPage": {
     "title": "Contact Us",
     "getInTouch": {
       "title": "Get in Touch",
-      "content": "Have questions about PollyTalkie? We'd love to hear from you. Send us a message and we'll respond as soon as possible."
+      "content": "We'd love to hear from you with any feedback, questions, or suggestions. Fill out the form and our team will get back to you as soon as possible."
     },
     "contactInfo": {
       "phone": "Phone",
@@ -320,6 +290,131 @@
       "evilGoogleDescription": "Google has abused its power and terminated our developer account without any valid reason, which prevents us from distributing PollyTalkie on the Google Play Store. We believe in transparency and the user's right to choose, so we are now providing a direct download.",
       "evilGoogleStep1": "Our app is no longer available on the Google Play Store due to Google's unfair policies.",
       "evilGoogleStep2": "Please use the direct APK download section below to install the app."
+    }
+  },
+  "aboutPage": {
+    "title": "About PollyTalkie",
+    "mission": {
+      "title": "Our Mission",
+      "content": "PollyTalkie is dedicated to breaking down language barriers through advanced AI technology, making language learning more natural, efficient, and enjoyable. We believe everyone should have the opportunity to learn new languages, explore new cultures, and expand their horizons."
+    },
+    "technology": {
+      "title": "Our Technology",
+      "content": "Our platform combines cutting-edge natural language processing technology and speech recognition systems to provide an immersive language learning experience. By engaging in real conversations with our AI assistants, users can practice their language skills in practical contexts, receive immediate feedback, and progress at their own pace."
+    },
+    "team": {
+      "title": "Our Team",
+      "content": "PollyTalkie is made up of professionals passionate about language learning and artificial intelligence. Our team includes linguists, software engineers, AI researchers, and education specialists working together to create the best language learning solutions."
+    },
+    "values": {
+      "title": "Our Values",
+      "innovation": "Innovation",
+      "innovationDesc": "Continuously exploring new technologies and methods to enhance the language learning experience.",
+      "inclusivity": "Inclusivity",
+      "inclusivityDesc": "Creating learning tools that work for everyone, regardless of background or ability.",
+      "quality": "Quality",
+      "qualityDesc": "Committed to providing the highest quality language learning content and technology.",
+      "community": "Community",
+      "communityDesc": "Fostering a global community of language learners and promoting cultural exchange."
+    },
+    "joinUs": {
+      "title": "Join Our Journey",
+      "content": "We invite you to join our language learning revolution. Whether you're looking to learn a new language or improve your existing skills, PollyTalkie provides the tools and support you need. Start your language learning journey and explore new possibilities today!"
+    }
+  },
+  "termsPage": {
+    "title": "Terms of Service",
+    "lastUpdated": "Last updated: February 25, 2025",
+    "introduction": {
+      "title": "1. Introduction",
+      "content": "Welcome to PollyTalkie (\"we\", \"our\", or \"us\"). By accessing or using our language learning platform, you agree to be bound by these Terms of Service (\"Terms\"). Please read these Terms carefully before using our services."
+    },
+    "serviceDescription": {
+      "title": "2. Service Description",
+      "content": "PollyTalkie provides an AI-powered language learning platform that enables users to practice conversations and improve their language skills. Our services include but are not limited to:",
+      "item1": "Interactive language learning sessions",
+      "item2": "AI conversation partners",
+      "item3": "Progress tracking and assessment",
+      "item4": "Educational content and resources"
+    },
+    "userAccounts": {
+      "title": "3. User Accounts",
+      "content": "To access certain features of our platform, you must create an account. You agree to:",
+      "item1": "Provide accurate and complete information",
+      "item2": "Maintain the security of your account credentials",
+      "item3": "Promptly update any changes to your information",
+      "item4": "Accept responsibility for all activities under your account"
+    },
+    "userConduct": {
+      "title": "4. User Conduct",
+      "content": "When using our services, you agree not to:",
+      "item1": "Violate any applicable laws or regulations",
+      "item2": "Infringe upon intellectual property rights",
+      "item3": "Share inappropriate or offensive content",
+      "item4": "Attempt to disrupt or compromise our systems",
+      "item5": "Use our services for unauthorized commercial purposes"
+    },
+    "payments": {
+      "title": "5. Payment Terms",
+      "content": "By subscribing to our premium services, you agree to the following payment terms:",
+      "item1": "Payment is due at the time of subscription and will be automatically renewed unless canceled.",
+      "item2": "We offer refunds within 7 days of subscription if you are not satisfied with our services.",
+      "item3": "Prices are subject to change, but we will notify you before applying any changes to your subscription."
+    },
+    "intellectualProperty": {
+      "title": "6. Intellectual Property",
+      "content": "All content and materials available through our services, including but not limited to text, graphics, logos, icons, images, audio clips, and software, are the property of PollyTalkie or its licensors and are protected by copyright, trademark, and other intellectual property laws."
+    },
+    "userContent": {
+      "title": "7. User Content",
+      "content": "By submitting content to our platform, you grant us a non-exclusive, worldwide, royalty-free license to use, reproduce, modify, and display your content for the purpose of providing our services.",
+      "item1": "You retain all ownership rights to your content.",
+      "item2": "You are solely responsible for the content you submit.",
+      "item3": "We reserve the right to remove any content that violates these Terms or is otherwise objectionable."
+    },
+    "prohibitedActivities": {
+      "title": "8. Prohibited Activities",
+      "content": "When using our services, you agree not to engage in any of the following prohibited activities:",
+      "item1": "Violating any applicable laws or regulations.",
+      "item2": "Infringing upon the intellectual property rights of others.",
+      "item3": "Attempting to gain unauthorized access to our systems or user accounts.",
+      "item4": "Using our services to transmit malware or other harmful code.",
+      "item5": "Engaging in any activity that disrupts or interferes with our services."
+    },
+    "termination": {
+      "title": "9. Termination",
+      "content": "We reserve the right to:",
+      "item1": "Suspend or terminate accounts for violations",
+      "item2": "Modify or discontinue services with notice",
+      "item3": "Remove content that violates these Terms"
+    },
+    "disclaimer": {
+      "title": "10. Disclaimer of Warranties",
+      "content": "Our services are provided 'as is' and 'as available' without warranties of any kind, either express or implied. We do not warrant that our services will be uninterrupted, error-free, or secure.",
+      "item1": "Services will be uninterrupted or error-free",
+      "item2": "Specific language learning outcomes will be achieved",
+      "item3": "Content will be accurate or complete"
+    },
+    "limitationOfLiability": {
+      "title": "11. Limitation of Liability",
+      "content": "To the maximum extent permitted by law, PollyTalkie shall not be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of profits or revenues, whether incurred directly or indirectly, or any loss of data, use, goodwill, or other intangible losses."
+    },
+    "changes": {
+      "title": "12. Changes to Terms",
+      "content": "We may modify these Terms at any time. We will notify users of material changes through:",
+      "item1": "Email notifications",
+      "item2": "Platform announcements",
+      "item3": "Website updates"
+    },
+    "governingLaw": {
+      "title": "13. Governing Law",
+      "content": "These Terms shall be governed by and construed in accordance with the laws of the State of California, without regard to its conflict of law principles. Any disputes arising under or in connection with these Terms shall be subject to the exclusive jurisdiction of the courts located in San Francisco County, California."
+    },
+    "contact": {
+      "title": "14. Contact Information",
+      "content": "For questions about these Terms, please contact us at:",
+      "email": "Email: support@pollytalkie.com",
+      "address": "Address: 123 Language Lane, San Francisco, CA 94103, USA"
     }
   },
   "footer": {

@@ -6,11 +6,9 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
 const footerLinks = [
-  { name: 'About', href: `/${lang === 'en' ? '' : lang + '/'}about` },
-  { name: t('nav.blog'), href: `/${lang === 'en' ? '' : lang + '/'}blog` },
-  { name: 'Contact', href: `/${lang === 'en' ? '' : lang + '/'}contact` },
-  { name: t('nav.terms'), href: `/${lang === 'en' ? '' : lang + '/'}terms` },
-  { name: t('nav.privacy'), href: `/${lang === 'en' ? '' : lang + '/'}privacy` },
+  { name: t('nav.about'), href: `/${lang}/about` },
+  { name: t('nav.terms'), href: `/${lang}/terms` },
+  { name: t('nav.privacy'), href: `/${lang}/privacy` },
 ];
 ---
 
