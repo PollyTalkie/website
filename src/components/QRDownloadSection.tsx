@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { QrCode, Download, ArrowRight } from 'lucide-react';
+import QRCode from 'react-qr-code';
 
 interface QRDownloadSectionProps {
   locale: string;
@@ -33,20 +34,42 @@ export function QRDownloadSection({ locale }: QRDownloadSectionProps) {
     apkFileSize: 'File size: ~25MB'
   };
 
-  // Simulate fetching download URL (replace with actual API call)
+  const fallbackUrl = 'https://github.com/PollyTalkie/website/releases/latest';
+
+  // Fetch the latest APK download URL from GitHub API
   useEffect(() => {
     const fetchDownloadUrl = async () => {
       try {
         setLoading(true);
-        // Simulate API call delay
-        await new Promise(resolve => setTimeout(resolve, 1000));
+        setError(false);
         
-        // For now, use a placeholder URL - replace with actual download URL
-        const mockUrl = 'https://github.com/pollytalkie/releases/latest/download/pollytalkie.apk';
-        setDownloadUrl(mockUrl);
+        // Fetch latest release from GitHub API
+        const response = await fetch('https://api.github.com/repos/PollyTalkie/website/releases/latest');
+        
+        if (!response.ok) {
+          throw new Error('Failed to fetch release data');
+        }
+        
+        const releaseData = await response.json();
+        
+        // Look for APK asset in the release
+        const apkAsset = releaseData.assets?.find((asset: any) => 
+          asset.name.toLowerCase().endsWith('.apk')
+        );
+        
+        if (apkAsset && apkAsset.browser_download_url) {
+          setDownloadUrl(apkAsset.browser_download_url);
+        } else {
+          // No APK found, use fallback URL
+          setDownloadUrl(fallbackUrl);
+        }
+        
         setLoading(false);
       } catch (err) {
-        setError(true);
+        console.error('Error fetching download URL:', err);
+        // On error, use fallback URL
+        setDownloadUrl(fallbackUrl);
+        setError(false); // Don't show error, just use fallback
         setLoading(false);
       }
     };
@@ -54,16 +77,6 @@ export function QRDownloadSection({ locale }: QRDownloadSectionProps) {
     fetchDownloadUrl();
   }, []);
 
-  // Simple QR code placeholder (you can replace this with actual QR code generation)
-  const QRCodePlaceholder = ({ value }: { value: string }) => (
-    <div className="w-[200px] h-[200px] bg-white border border-primary/20 rounded-lg flex items-center justify-center">
-      <div className="text-center">
-        <QrCode className="h-16 w-16 mx-auto mb-2 text-primary" />
-        <p className="text-xs text-muted-foreground">QR Code</p>
-        <p className="text-xs text-muted-foreground">for APK Download</p>
-      </div>
-    </div>
-  );
 
   return (
     <motion.div 
@@ -89,13 +102,13 @@ export function QRDownloadSection({ locale }: QRDownloadSectionProps) {
               <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
             </div>
           )}
-          {error && (
-            <div className="w-[200px] h-[200px] flex items-center justify-center">
-              <p className="text-destructive text-sm">Error loading QR code</p>
-            </div>
-          )}
-          {downloadUrl && !loading && !error && (
-            <QRCodePlaceholder value={downloadUrl} />
+          {downloadUrl && !loading && (
+            <QRCode
+              value={downloadUrl}
+              size={200}
+              level="H"
+              style={{ height: "auto", maxWidth: "100%", width: "100%" }}
+            />
           )}
         </div>
         
