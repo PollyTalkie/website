@@ -1,0 +1,152 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navigation from '../../components/Navigation.astro';
+import Footer from '../../components/Footer.astro';
+import { useTranslations, getStaticPaths } from '../../i18n/utils';
+import { URLS } from '../../lib/env';
+import { PricingCalculator } from '../../components/PricingCalculator';
+import { PricingCard } from '../../components/PricingCard';
+
+export { getStaticPaths };
+
+const { lang } = Astro.params;
+const t = useTranslations(lang as 'en' | 'zh');
+
+const tiers = [
+  {
+    name: t('pricing.tiers.regular.name'),
+    price: t('pricing.tiers.regular.price'),
+    earlyPrice: t('pricing.tiers.regular.earlyPrice'),
+    period: t('pricing.tiers.regular.period'),
+    description: t('pricing.tiers.regular.description'),
+    features: [
+      t('pricing.tiers.regular.features.feature1'),
+      t('pricing.tiers.regular.features.feature2'),
+      t('pricing.tiers.regular.features.feature3'),
+      t('pricing.tiers.regular.features.feature4'),
+      t('pricing.tiers.regular.features.feature5'),
+      t('pricing.tiers.regular.features.feature6'),
+    ],
+    cta: t('pricing.tiers.regular.cta'),
+    href: `${URLS.portal.signup}?plan=regular`,
+    freeTrial: true,
+  },
+  {
+    name: t('pricing.tiers.aggressive.name'),
+    price: t('pricing.tiers.aggressive.price'),
+    earlyPrice: t('pricing.tiers.aggressive.earlyPrice'),
+    period: t('pricing.tiers.aggressive.period'),
+    description: t('pricing.tiers.aggressive.description'),
+    features: [
+      t('pricing.tiers.aggressive.features.feature1'),
+      t('pricing.tiers.aggressive.features.feature2'),
+      t('pricing.tiers.aggressive.features.feature3'),
+      t('pricing.tiers.aggressive.features.feature4'),
+      t('pricing.tiers.aggressive.features.feature5'),
+      t('pricing.tiers.aggressive.features.feature6'),
+    ],
+    cta: t('pricing.tiers.aggressive.cta'),
+    href: `${URLS.portal.signup}?plan=aggressive`,
+    featured: true,
+    freeTrial: false,
+  },
+  {
+    name: t('pricing.tiers.unlimited.name'),
+    price: t('pricing.tiers.unlimited.price'),
+    earlyPrice: t('pricing.tiers.unlimited.earlyPrice'),
+    period: t('pricing.tiers.unlimited.period'),
+    description: t('pricing.tiers.unlimited.description'),
+    features: [
+      t('pricing.tiers.unlimited.features.feature1'),
+      t('pricing.tiers.unlimited.features.feature2'),
+      t('pricing.tiers.unlimited.features.feature3'),
+      t('pricing.tiers.unlimited.features.feature4'),
+      t('pricing.tiers.unlimited.features.feature5'),
+      t('pricing.tiers.unlimited.features.feature6'),
+    ],
+    cta: t('pricing.tiers.unlimited.cta'),
+    href: `${URLS.portal.signup}?plan=unlimited`,
+    freeTrial: false,
+  },
+  {
+    name: t('pricing.tiers.school.name'),
+    price: t('pricing.tiers.school.price'),
+    description: t('pricing.tiers.school.description'),
+    features: [
+      t('pricing.tiers.school.features.feature1'),
+      t('pricing.tiers.school.features.feature2'),
+      t('pricing.tiers.school.features.feature3'),
+      t('pricing.tiers.school.features.feature4'),
+      t('pricing.tiers.school.features.feature5'),
+      t('pricing.tiers.school.features.feature6'),
+    ],
+    cta: t('pricing.tiers.school.cta'),
+    href: `/${lang}/contact`,
+  },
+];
+---
+
+<Layout title={`${t('pricing.title')} - PollyTalkie`} lang={lang}>
+  <Navigation />
+  
+  <main class="flex min-h-screen flex-col items-center pt-32 py-12 bg-background">
+    <div class="container mx-auto px-4 md:px-6">
+      <div class="text-center space-y-4 mb-12">
+        <h1 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+          {t('pricing.title')}
+        </h1>
+        <p class="mx-auto max-w-[700px] text-zinc-500 md:text-xl dark:text-zinc-400">
+          {t('pricing.subtitle')}
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
+        {tiers.map((tier, index) => (
+          <PricingCard 
+            tier={tier} 
+            index={index} 
+            mostPopularText={t('pricing.mostPopular')}
+            freeTrialText={t('pricing.freeTrialBadge')}
+            earlyAdopterText={t('pricing.earlyAdopter')}
+            client:load 
+          />
+        ))}
+      </div>
+
+      <div class="mt-12 text-center">
+        <h2 class="text-2xl font-bold mb-4">{t('pricing.faqTitle')}</h2>
+        <div class="grid gap-6 md:grid-cols-2 text-left">
+          <!-- Special FAQ for add-ons -->
+          <PricingCalculator locale={lang} client:load />
+          
+          <div class="space-y-2">
+            <h3 class="font-semibold">{t('pricing.faq.question1')}</h3>
+            <p class="text-sm text-muted-foreground">
+              {t('pricing.faq.answer1')}
+            </p>
+          </div>
+          <div class="space-y-2">
+            <h3 class="font-semibold">{t('pricing.faq.question2')}</h3>
+            <p class="text-sm text-muted-foreground">
+              {t('pricing.faq.answer2')}
+            </p>
+          </div>
+          <div class="space-y-2">
+            <h3 class="font-semibold">{t('pricing.faq.question3')}</h3>
+            <p class="text-sm text-muted-foreground">
+              {t('pricing.faq.answer3')}
+            </p>
+          </div>
+          <div class="space-y-2">
+            <h3 class="font-semibold">{t('pricing.faq.question4')}</h3>
+            <p class="text-sm text-muted-foreground">
+              {t('pricing.faq.answer4')}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>

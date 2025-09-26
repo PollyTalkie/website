@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Minus, Plus } from 'lucide-react';
 import { URLS } from '../lib/env';
 
 interface PricingCalculatorProps {
@@ -80,9 +81,7 @@ export function PricingCalculator({ locale }: PricingCalculatorProps) {
             disabled={addOns === 0}
             className="h-8 w-8 inline-flex items-center justify-center rounded-md border border-input bg-background hover:bg-accent hover:text-accent-foreground disabled:pointer-events-none disabled:opacity-50"
           >
-            <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M20 12H4" />
-            </svg>
+            <Minus className="h-4 w-4" />
           </button>
           
           <div className="flex-1 mx-3">
@@ -104,9 +103,7 @@ export function PricingCalculator({ locale }: PricingCalculatorProps) {
             disabled={addOns === 4}
             className="h-8 w-8 inline-flex items-center justify-center rounded-md border border-input bg-background hover:bg-accent hover:text-accent-foreground disabled:pointer-events-none disabled:opacity-50"
           >
-            <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-            </svg>
+            <Plus className="h-4 w-4" />
           </button>
         </div>
         
