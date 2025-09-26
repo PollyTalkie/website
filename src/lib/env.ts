@@ -35,8 +35,8 @@ export const getPortalUrls = () => {
   
   return {
     base: baseUrl,
-    signin: `${baseUrl}/signin`,
-    signup: `${baseUrl}/signup`,
+    signin: `${baseUrl}/auth/signin`,
+    signup: `${baseUrl}/auth/signup`,
     dashboard: `${baseUrl}/dashboard`,
     pricing: `${baseUrl}/pricing`,
     profile: `${baseUrl}/profile`,
