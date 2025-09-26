@@ -225,17 +225,17 @@
       "name": "Name",
       "email": "Email",
       "subject": "Subject",
-      "message": "Message",
-      "selectSubject": "Select a subject",
+      "selectSubject": "Please select a subject",
       "generalInquiry": "General Inquiry",
       "technicalSupport": "Technical Support",
-      "billing": "Billing",
-      "feedback": "Feedback",
-      "partnership": "Partnership",
-      "send": "Send Message",
+      "billing": "Billing & Subscription",
+      "feedback": "Product Feedback",
+      "partnership": "Partnership Opportunities",
+      "message": "Message",
       "sending": "Sending...",
-      "success": "Thank you for your message! We'll get back to you soon.",
-      "error": "Sorry, there was an error sending your message. Please try again."
+      "send": "Send Message",
+      "success": "Your message has been sent successfully. We will get back to you soon.",
+      "error": "There was an error sending your message. Please try again later."
     }
   },
   "blog": {

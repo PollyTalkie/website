@@ -195,30 +195,30 @@
   "contactPage": {
     "title": "联系我们",
     "getInTouch": {
-      "title": "联系我们",
-      "content": "对博语通有疑问吗？我们很乐意听到您的声音。给我们发送消息，我们会尽快回复。"
+      "title": "与我们取得联系",
+      "content": "我们很乐意听取您的反馈、问题或建议。请填写表格，我们的团队将尽快与您联系。"
     },
     "contactInfo": {
       "phone": "电话",
-      "email": "邮箱",
+      "email": "电子邮件",
       "address": "地址"
     },
     "followUs": "关注我们",
     "form": {
       "name": "姓名",
-      "email": "邮箱",
+      "email": "电子邮件",
       "subject": "主题",
-      "message": "消息",
-      "selectSubject": "选择主题",
+      "selectSubject": "请选择一个主题",
       "generalInquiry": "一般咨询",
       "technicalSupport": "技术支持",
-      "billing": "计费",
-      "feedback": "反馈",
-      "partnership": "合作",
-      "send": "发送消息",
+      "billing": "账单和订阅",
+      "feedback": "产品反馈",
+      "partnership": "合作机会",
+      "message": "消息",
       "sending": "发送中...",
-      "success": "感谢您的消息！我们会尽快回复您。",
-      "error": "抱歉，发送消息时出现错误。请重试。"
+      "send": "发送消息",
+      "success": "您的消息已成功发送。我们将尽快回复您。",
+      "error": "发送消息时出错。请稍后再试。"
     }
   },
   "blog": {
